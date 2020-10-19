@@ -9,10 +9,6 @@ import "./infosection.css";
 
 function Dankmemes() {
   const [chartData, setChartData] = useState({});
-  const [chartDataLine, setChartDataLine] = useState({});
-  const [chartDataLine1, setChartDataLine1] = useState({});
-  const [chartDataLine2, setChartDataLine2] = useState({});
-  const [chartDataLine3, setChartDataLine3] = useState({});
   
   const [TotalConfirmed, setTotalConfirmed] = useState({});
   const [data, setData] = useState([]);
@@ -231,15 +227,15 @@ function Dankmemes() {
         <div className="row">
         <div class="col-sm-2 hover2 pointer ">
               <hr className="onHover1"/>
-              <p className="MarginTop ml-5">Discusion</p>
+              <p className="MarginTop ml-5 boldhover">Discusion</p>
               </div>
             <div class="col-sm-2 hover2 pointer">
             <hr className="onHover1"/>
-            <p className="MarginTop ml-2 ">Blog Post</p>
+            <p className="MarginTop ml-2 boldhover">Blog Post</p>
               </div>
             <div class="col-sm hover2 pointer">
               <hr className="onHover1"/>
-              <p className="MarginTop2 ml-2">Question And Answer</p>
+              <p className="MarginTop2 ml-2 boldhover">Question And Answer</p>
               </div>
               <div class="col-sm-5">
                
@@ -304,7 +300,7 @@ function Dankmemes() {
             </div>
             
                            
-            <div class="col-sm text-left hover">
+            <div class="col-sm text-left hover pointer">
             <p>Last 7 days <AiFillCaretDown className="marginicon"/></p>
             </div>
                 

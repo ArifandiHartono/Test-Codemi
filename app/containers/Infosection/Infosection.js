@@ -13,7 +13,11 @@ function Dankmemes() {
   const [chartDataLine1, setChartDataLine1] = useState({});
   const [chartDataLine2, setChartDataLine2] = useState({});
   const [chartDataLine3, setChartDataLine3] = useState({});
-  
+  const [TotalRecov, setTotalRecov] = useState({});
+  const [TotalDeat, setTotalDeat] = useState({});
+  const [TotalDelta, setTotalDelta] = useState({});
+  const [TotalDailys, setTotalDaily] = useState({});
+
   const [TotalConfirmed, setTotalConfirmed] = useState({});
   const [data, setData] = useState([]);
   var Total = 0;
@@ -26,6 +30,9 @@ function Dankmemes() {
   let Death2 = [];
   let Recovered =[];
   let Active =[];
+  let TotalRecovered = 0;
+  let TotalDeltaConfirmed = 0;
+  let TotalDeath = 0;
 
   const chart = () => { 
     axios
@@ -41,6 +48,7 @@ function Dankmemes() {
           Confirmed.push(parseInt(dataObj[key].confirmed));
           Country.push(dataObj[key].countryRegion);
           Total= dataObj[key].confirmed+Total;
+          
           dataSet.push(dataObj[key]);  
           Death.push(dataObj[key].deaths)
           }
@@ -69,40 +77,7 @@ function Dankmemes() {
             
           ]
         });
-        // setChartDataLine({
-        //   labels: Country,
-        //   datasets: [
-        //     {
-        //       label: "level of thiccness",
-        //       data: Confirmed,
-        //       fill: false,
-        //       backgroundColor: "rgba(0,0, 255, 1)",
-        //       borderWidth: 2,
-        //       borderColor: "rgba(0,0, 255, 1)",
-              
-        //       backgroundColor: "rgba(0,0, 255, 1)",
-        //       pointBackgroundColor: "rgba(0,0, 255, 1)",
-        //       pointBorderColor: "rgba(0,0, 255, 1)",
-        //       pointHoverBackgroundColor: "rgba(0,0, 255, 1)",
-        //       pointHoverBorderColor: "rgba(0,0, 255, 1)",
-        //     },
-        //     {
-        //       label: "level of thiccness",
-        //       data: Death,
-        //       fill: false,
-        //       backgroundColor: "rgba(0,0, 255, 1)",
-        //       borderWidth: 2,
-        //       borderColor: "rgba(0,0, 255, 1)",
-        //       borderDash: [5, 5],
-        //       backgroundColor: "rgba(0,0, 255, 1)",
-        //       pointBackgroundColor: "rgba(0,0, 255, 1)",
-        //       pointBorderColor: "rgba(0,0, 255, 1)",
-        //       pointHoverBackgroundColor: "rgba(0,0, 255, 1)",
-        //       pointHoverBorderColor: "rgba(0,0, 255, 1)",
-        //     }
-            
-        //   ]
-        // });
+        
       })
       .catch(err => {
         console.log(err);
@@ -110,31 +85,48 @@ function Dankmemes() {
     console.log(Confirmed, Country);
     
   };
-
- 
-    
+   
   const chartline = () => { 
     axios
       .get("https://covid19.mathdro.id/api/daily")
       .then(res => {
         console.log(res);
-        const dataObj = res.data;
-        const dataSet = [];
-
+        const dataObj2 = res.data;
+        
         var now = new Date();
-        console.log(dataObj[1].confirmed.total);
+        console.log(dataObj2[1].confirmed.total);
         //dilakukan agar data tidak terlalu banyak sehingga bentuk chart bagus
         for ( var i = 0; i < 7; i++) {
         
-          Confirm.push(dataObj[i].confirmed.total);
-          Dates.push(dataObj[i].reportDate);
-          Death2.push(dataObj[i].deaths.total);
-          Recovered.push(dataObj[i].recovered.total);
-          Active.push(dataObj[i].deltaConfirmedDetail.total);
-          TotalDaily = dataObj[i].confirmed.total+TotalDaily;
-          
+          Confirm.push(dataObj2[i].confirmed.total);
+          Dates.push(dataObj2[i].reportDate);
+          Death2.push(dataObj2[i].deaths.total);
+          Recovered.push(dataObj2[i].recovered.total);
+          Active.push(dataObj2[i].deltaConfirmedDetail.total);
+          TotalDaily = dataObj2[i].confirmed.total+TotalDaily;
+          TotalRecovered = dataObj2[i].recovered.total + TotalRecovered;
+          TotalDeath = dataObj2[i].deaths.total + TotalDeath;
+          TotalDeltaConfirmed = dataObj2[i].deltaConfirmedDetail.total+TotalDeltaConfirmed;
         }
         console.log(Confirm, Death2, Dates);
+        setTotalDaily(
+          {
+          Total:  TotalDaily,
+        });
+        setTotalRecov(
+          {
+            Total:  TotalRecovered,
+          }
+         );
+        setTotalDeat(
+          {
+            Total:  TotalDeath,
+          });
+        setTotalDelta(
+          {
+            Total:  TotalDeltaConfirmed,
+          }
+          );
         setChartDataLine({
           labels: Dates,
           datasets: [
@@ -143,6 +135,7 @@ function Dankmemes() {
               data: Confirm,
               fill: false,
               backgroundColor: "rgba(0,0, 255, 1)",
+              lineTension: 0,  
               borderWidth: 2,
               borderColor: "rgba(0,0, 255, 1)",
               
@@ -156,6 +149,7 @@ function Dankmemes() {
               label: "level of thiccness",
               data: Death2,
               fill: false,
+              lineTension: 0,  
               backgroundColor: "rgba(0,0, 255, 1)",
               borderWidth: 2,
               borderColor: "rgba(0,0, 255, 1)",
@@ -225,42 +219,48 @@ function Dankmemes() {
     <div>
        <hr class="onHover"/>
               
-      <h1>Dankmemes</h1>
+     
       <div class="row">
         <div class="col-6 ml-auto bg-white text-dark opacitytext shadow">
           <div className="row">
             <div class="col-sm hover2 pointer">
               <hr className="onHover"/>
-              <p className="MarginTop">Confirmed</p>
-              <h1>58K</h1>
-              <p>vs last 7 days</p>
+              <p className="MarginTop boldhover">Confirmed</p>
+                  <h1>{TotalDailys.Total}</h1>
+              <p className="Hides">vs last 7 days</p>
             </div>
             <div class="col-sm hover2 pointer">
             <hr className="onHover"/>
-            <p className="MarginTop ">Recovered</p>
-              <h1>58K</h1>
-              <p>vs last 7 days</p>  
+            <p className="MarginTop boldhover">Recovered</p>
+              <h1>{TotalRecov.Total}</h1>
+              <p className="Hides">vs last 7 days</p>  
             </div>
             <div class="col-sm hover2 pointer">
               <hr className="onHover "/>
-              <p className="MarginTop">Death</p>
-              <h1>58K</h1>
-              <p>vs last 7 days</p>
+              <p className="MarginTop boldhover">Death</p>
+              <h1>{TotalDeat.Total}</h1>
+              <p className="Hides">vs last 7 days</p>
             </div>
             <div class="col-sm hover2 pointer">
-              <hr className="onHover"/>
-              <p className="MarginTop">DeltaConfirmed</p>
-              <h1>58K</h1>
-              <p>vs last 7 days</p>
+              <hr className="onHover "/>
+              <p className="MarginTop boldhover">DeltaConfirmed</p>
+              <h1>{TotalDelta.Total}</h1>
+              <p className="Hides">vs last 7 days</p>
             </div>
           </div>
           <div className="Chart">
                 <Line
+                  width={10}
+                  height={6}
                   data={chartDataLine}
                   options={{
+                    
                     responsive: true,
                    
                     elements: {
+                      line: {
+                        tension: 0
+                      },
                       point:{
                           radius: 0
                       }
@@ -306,10 +306,9 @@ function Dankmemes() {
                     }
                   }}
                 />
-                <div className="margin7days">
-              <p>Last 7 days<AiFillCaretDown/></p>
+                <hr className="hrbottom"/>
+                <p>Last 7 days<AiFillCaretDown/></p>
                 </div>
-            </div>
 
           </div>
         <div class="col-3 mr-5 bg-primary ml-3 text-white opacitytext">

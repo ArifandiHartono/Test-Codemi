@@ -205,7 +205,7 @@ function Dankmemes() {
                   Confirmed
                 </div>
                 <div class="col-sm text-right mt-4 mr-3 mb-3">
-                  Recovered
+                  Death
                 </div>
             <hr className="hrwhite4"/>
        

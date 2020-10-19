@@ -17,8 +17,9 @@ export default function HomePage() {
     <div>
       <NavBar />
       <SideBar />
-
+      
       <div>
+      
         <Home />
       </div>
     </div>
