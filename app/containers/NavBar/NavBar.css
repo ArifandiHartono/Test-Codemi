@@ -1,0 +1,136 @@
+.navbar{
+    display:flex;
+    position:sticky;
+    width: 100%;
+    height: 90px;
+    background :#fff;
+    margin-left:-10px;
+    margin-top:-10px;
+    z-index: 8;
+}
+
+.container-Item-Nav
+{
+    position: absolute;
+    width: 200px;
+    margin-bottom: 10px;
+    left: 87%;
+    align-items: center;
+    
+}
+.containerIcon{
+    color: black;
+    opacity: 70%;  
+    margin-bottom: -10px;
+    margin-right: 10px;
+    margin-left: 10px;
+
+}
+
+.iconpanah
+{
+    color: black;
+    opacity: 40%;  
+    margin-left: 5px;
+    margin-bottom: -20px;
+}
+
+.iconpanah:hover {
+    color: Green;
+    transition: 0.3s ease-out;
+  }
+
+.iconlonceng
+{
+    color: black;
+    opacity: 40%;  
+    margin-right: 15px;
+    margin-bottom: -20px;
+}
+.iconlonceng:hover {
+    color: Green;
+    transition: 0.3s ease-out;
+  }
+
+
+.container{
+    z-index: 8;
+    padding-left:40px;
+    width: 100%;
+    height: 70px; 
+    align-items: center;
+    left: 0px;
+    top: 0px;
+    display:flex;
+    position: fixed;
+    background: #FDFDFD;
+    border: 1px solid #E7DFDF;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.container-logo{
+    margin-bottom: 10px;
+    margin-right:400px;
+    align-items: center;
+}
+
+.Logo{
+    width:123px;
+    height:46px;
+    align-items: center;
+    margin-top:8px;
+}
+
+.User{
+    width:50px;
+    height:50px;
+    border-radius:50%;
+    align-items: right;
+    margin-top:8px;
+}
+
+
+h2{
+    font-family: Roboto;
+    font-size:20px;
+    font-weight: 500;
+    margin-left:22px;
+    color:#D79F64;
+}
+
+
+@media screen and (max-width: 900px) {
+   
+.container-Item-Nav
+{
+    position: absolute;
+    width: 200px;
+    margin-bottom: 10px;
+    left: 70%;
+    align-items: center;
+    
+}
+  }
+
+
+  .notification {
+  text-decoration: none;
+  padding: 0px 12px;
+  position: relative;
+  display: inline-block;
+  font-size: 10px;
+ }
+
+.notification .badge {
+  position: absolute;
+  top: -8px;
+  right: 20px;
+  padding: 5px 5px;
+  border-radius: 15%;
+  background: red;
+  color: white;
+}
+
+
+
+

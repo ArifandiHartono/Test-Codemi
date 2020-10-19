@@ -8,11 +8,22 @@
 import React from 'react';
 import { FormattedMessage } from 'react-intl';
 import messages from './messages';
+import SideBar from '../SideBar/SideBar';
+import NavBar from '../NavBar/NavBar';
+import Home from '../Home/Home';
+
+
 
 export default function HomePage() {
   return (
-    <h1>
-      <FormattedMessage {...messages.header} />
-    </h1>
+    <div>
+        <NavBar/>
+        <SideBar/>
+        
+        <div>
+            <Home/>
+        </div>
+    </div>
+ 
   );
 }
