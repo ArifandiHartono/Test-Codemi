@@ -48,12 +48,12 @@ function infosection() {
           {
           Confirmed.push(parseInt(dataObj[key].confirmed));
           Country.push(dataObj[key].countryRegion);
-          Total= dataObj[key].confirmed+Total;
+          
           
           dataSet.push(dataObj[key]);  
           Death.push(dataObj[key].deaths)
           }
-          
+          Total= dataObj[key].confirmed+Total;
         });
         setData(dataSet);
 

@@ -11,6 +11,7 @@
     background: #FDFDFD;
     border: 1px solid #E7DFDF;
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    z-index: 10;
 }
 
 .container-Item-Nav

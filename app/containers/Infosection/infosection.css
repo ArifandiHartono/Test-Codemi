@@ -134,6 +134,12 @@
 
 @media  screen and (min-width: 1800px) {
         
+    .positiondrop1
+    {
+    position: absolute;
+    top: 98%;
+    z-index: 9;
+    }
     .margins2{
         margin-top: 0px;
         margin-left: -4.5%;

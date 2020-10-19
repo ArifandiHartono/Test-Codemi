@@ -10,7 +10,7 @@ export const HomeContainer = styled.div`
       
     @media  screen and (max-width: 1920px) {
       margin-top: -60px;
-      margin-left: -90px;
+      margin-left: -90px;np
       padding: 1px 16px;
          
     }
