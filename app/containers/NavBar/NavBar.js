@@ -1,16 +1,35 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { Link } from 'react-router-dom';
 
 import { AiOutlineDown, AiFillBell } from 'react-icons/ai';
-
 import User from './User.jpg';
 import Logo from './Logo.png';
-
+import Dropdown from'../Dropdown/Dropdown';
 import { AboutLinkLogo } from '../../components/NavBar/NavbarElement';
 
 import './Navbar.css';
 
 function navbar() {
+
+  const [dropdown, setDropdown] = useState(false);
+
+  const onMouseEnter = () => {
+    if (window.innerWidth < 960) {
+      setDropdown(true);
+    } else {
+      setDropdown(true);
+    }
+  };
+
+  const onMouseLeave = () => {
+    if (window.innerWidth < 960) {
+      setDropdown(false);
+    } else {
+      setDropdown(false);
+    }
+  };
+
   return (
     <div className="navbar">
       <div className="container-logo">
@@ -23,11 +42,17 @@ function navbar() {
         </AboutLinkLogo>
         <img className="User" src={User} alt="User-codemi" />
         <AboutLinkLogo>
-          <AiOutlineDown className="iconpanah" size={16} />
+          <AiOutlineDown  className='nav-item'
+            onMouseEnter={onMouseEnter}
+            onMouseLeave={onMouseLeave} className="iconpanah" size={16} />
+          {dropdown && <Dropdown />}
         </AboutLinkLogo>
       </div>
     </div>
   );
 }
+
+
+
 
 export default navbar;
