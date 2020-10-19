@@ -8,8 +8,18 @@
     margin-bottom: -100px;
 }
 
+.marginchart
+{
+    margin-bottom: 50px;
+    margin-top: 30px;
+    margin-left: 20px;
+    margin-right: 20px;
+}
+
 .widthsection3
 {
+  
+    margin-top: 80px;
     width: 76%;
 }
 
@@ -18,7 +28,7 @@
     opacity: 30%;
     margin-top: -1px;
     margin-bottom: -20px;
-    width: 85%;
+    width: 88%;
     color: black;
     border-color:black;
 }
@@ -36,7 +46,7 @@
 }
 
 .MarginTop2{
-    margin-top: 29PX;
+    margin-top: 35PX;
 }
 
 .pointer{
@@ -48,9 +58,9 @@
     opacity: 20%;
     margin-top: -1px;
     margin-bottom: -20px;
-    margin-left: 6%;
+    margin-left: 7.5%;
 
-    width: 90%;
+    width: 87%;
     color: black;
     border-color:black;
 }

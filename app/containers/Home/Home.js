@@ -1,19 +1,15 @@
 import React from 'react';
+import Infosection from "../Infosection/Infosection";
+import Infosection2 from "../Infosection/Infosection2";
+import Infosection3 from "../Infosection/Infosection3";
 import { HomeContainer } from '../../components/Home/Home.element.js';
 
 function Home() {
   return (
     <HomeContainer>
-      <h2>Responsive Sidebar Example</h2>
-      <p>
-        This example use media queries to transform the sidebar to a top
-        navigation bar when the screen size is 700px or less.
-      </p>
-      <p>
-        We have also added a media query for screens that are 400px or less,
-        which will vertically stack and center the navigation links.
-      </p>
-      <h3>Resize the browser window to see the effect.</h3>
+     <Infosection/>
+     <Infosection2/>
+     <Infosection3/>
     </HomeContainer>
   );
 }

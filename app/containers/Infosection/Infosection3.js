@@ -222,25 +222,24 @@ function Dankmemes() {
   }
 
   return (
-    <div className="App">
+    <div>
        <hr class="onHover"/>
               
-      <h1>Dankmemes</h1>
-      <div class="row">
+        <div class="row">
        
-        <div class="widthsection3 mr-5 bg-white shadow ml-auto text-white opacitytext">
+        <div class="widthsection3 mr-5 bg-white shadow ml-auto text-dark  opacitytext">
         <div className="row">
-            <div class="col-sm-2 hover2 ">
+        <div class="col-sm-2 hover2 pointer ">
               <hr className="onHover1"/>
-              <p className="MarginTop">Discusion</p>
+              <p className="MarginTop ml-5">Discusion</p>
               </div>
-            <div class="col-sm-2 hover2 ">
+            <div class="col-sm-2 hover2 pointer">
             <hr className="onHover1"/>
-            <p className="MarginTop ">Blog Post</p>
+            <p className="MarginTop ml-2 ">Blog Post</p>
               </div>
-            <div class="col-sm hover2 ">
+            <div class="col-sm hover2 pointer">
               <hr className="onHover1"/>
-              <p className="MarginTop2">Question And Answer</p>
+              <p className="MarginTop2 ml-2">Question And Answer</p>
               </div>
               <div class="col-sm-5">
                
@@ -250,10 +249,15 @@ function Dankmemes() {
 
           <div class="m-1">
          
-            <div className="Chart margins2 ">
-                <Bar
+            <div className="Chart marginchart">
+                
+                <Bar 
+                  width={80}
+                  height={30}
                   data={chartData}
                   options={{
+
+                    responsive: true,
 
                     
                     legend: {
@@ -301,7 +305,7 @@ function Dankmemes() {
             
                            
             <div class="col-sm text-left hover">
-            REAL-TIMEREPORT <AiOutlineRight className="marginicon"/>
+            <p>Last 7 days <AiFillCaretDown className="marginicon"/></p>
             </div>
                 
           </div>            

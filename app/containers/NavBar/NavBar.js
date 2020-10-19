@@ -12,7 +12,7 @@ import './Navbar.css';
 
 function navbar() {
   return (
-    <div className="container">
+    <div className="navbar">
       <div className="container-logo">
         <img className="Logo" src={Logo} alt="Logo-codemi" />
       </div>

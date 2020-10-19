@@ -222,7 +222,7 @@ function Dankmemes() {
   }
 
   return (
-    <div className="App">
+    <div>
        <hr class="onHover"/>
               
       <h1>Dankmemes</h1>

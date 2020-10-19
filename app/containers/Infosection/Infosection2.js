@@ -115,7 +115,7 @@ function Dankmemes() {
           
           <div class=" text-dark">
           <div class="row">
-            <div class=" text-success col-sm text-left ml-3 mt-3 mb-3">
+            <div class=" text-success col-sm text-left ml-4 mt-3 mb-3">
             {user.countryRegion}
             </div>
             <div class="col-sm text-right mt-3 mb-3">
@@ -144,7 +144,7 @@ function Dankmemes() {
           
           <div class=" text-dark">
           <div class="row">
-            <div class=" text-success col-sm text-left ml-3 mt-3 mb-3 ">
+            <div class=" text-success col-sm text-left ml-4 mt-3 mb-3 ">
             {user.countryRegion}
             </div>
             <div class="col-sm text-right mt-3 mb-3">
@@ -164,14 +164,14 @@ function Dankmemes() {
 
 
   return (
-    <div className="App">
+    <div>
        <hr class="onHover"/>
               
       <h1>Dankmemes</h1>
       <div class="row">
         <div class=" containersize ml-auto bg-white shadow text-dark ">
           <div className="row">
-          <div class="col-sm text-left ml-4 mt-4 mb-3 ">
+          <div class="col-sm text-left ml-3 mt-4 mb-3 ">
                      Country
                   </div>
                   <div class="col-sm text-right mt-4 mb-3 ">
