@@ -5,10 +5,33 @@ import axios from "axios";
 import {AiOutlineRight} from"react-icons/ai";
 import {AiFillCaretDown} from"react-icons/ai";
 
+import DropdownDays from "../Dropdown/DropdownDays";
+
 import "./infosection.css";
 
-function Dankmemes() {
+function infosection3() {
   const [chartData, setChartData] = useState({});
+
+  
+  const [dropdown, setDropdown] = useState(false);
+
+  const onMouseEnter = () => {
+    if (window.innerWidth < 960) {
+      setDropdown(false);
+    } else {
+      setDropdown(true);
+    }
+  };
+
+  const onMouseLeave = () => {
+    if (window.innerWidth < 960) {
+      setDropdown(false);
+    } else {
+      setDropdown(false);
+    }
+  };
+
+  
   
   const [TotalConfirmed, setTotalConfirmed] = useState({});
   const [data, setData] = useState([]);
@@ -301,7 +324,14 @@ function Dankmemes() {
             
                            
             <div class="col-sm text-left hover pointer">
-            <p>Last 7 days <AiFillCaretDown className="marginicon"/></p>
+              <div  onClick={onMouseEnter}
+                   onMouseLeave={onMouseLeave}
+                   className="pointer">
+                  <p>Last 7 days<AiFillCaretDown/></p>
+                  </div>
+                  <div className="positiondrop3">
+                  {dropdown && <DropdownDays />}
+              </div>
             </div>
                 
           </div>            
@@ -311,4 +341,4 @@ function Dankmemes() {
   );
 };
 
-export default Dankmemes;
+export default infosection3;

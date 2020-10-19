@@ -32,9 +32,10 @@ function navbar() {
         <hr className="new4" />
 
         <MenuUtama href="#news">LEARNING</MenuUtama>
+
         <MenuDalam href="#news" className="notification2">
-          <GrDiamond className="icon" size={21} />
-          Courses
+          <GrDiamond className="icon" size={21} />   <p className="courses">Courses</p>
+        
           <span className="badge">21</span>
         </MenuDalam>
         <MenuDalam href="#news">

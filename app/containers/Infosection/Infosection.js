@@ -6,8 +6,9 @@ import {AiOutlineRight} from"react-icons/ai";
 import {AiFillCaretDown} from"react-icons/ai";
 
 import "./infosection.css";
+import DropdownDays from "../Dropdown/DropdownDays";
 
-function Dankmemes() {
+function infosection() {
   const [chartData, setChartData] = useState({});
   const [chartDataLine, setChartDataLine] = useState({});
   const [chartDataLine1, setChartDataLine1] = useState({});
@@ -179,6 +180,25 @@ function Dankmemes() {
     chartline();
   }, []);
 
+  const [dropdown, setDropdown] = useState(false);
+
+  const onMouseEnter = () => {
+    if (window.innerWidth < 960) {
+      setDropdown(false);
+    } else {
+      setDropdown(true);
+    }
+  };
+
+  const onMouseLeave = () => {
+    if (window.innerWidth < 960) {
+      setDropdown(false);
+    } else {
+      setDropdown(false);
+    }
+  };
+
+
 
   const renderTable = () => {
     let startIndex = 0;
@@ -221,7 +241,7 @@ function Dankmemes() {
               
      
       <div class="row">
-        <div class="col-6 ml-auto bg-white text-dark opacitytext shadow">
+        <div class="col-6 ml-auto bg-white text-dark opacitytext shadow index">
           <div className="row">
             <div class="col-sm hover2 pointer">
               <hr className="onHover"/>
@@ -251,7 +271,7 @@ function Dankmemes() {
           <div className="Chart">
                 <Line
                   width={10}
-                  height={6}
+                  height={7}
                   data={chartDataLine}
                   options={{
                     
@@ -306,10 +326,19 @@ function Dankmemes() {
                     }
                   }}
                 />
-                <hr className="hrbottom"/>
-                <p>Last 7 days<AiFillCaretDown/></p>
-                </div>
+                
+                  <hr className="hrbottom"/>
+                  <div  onClick={onMouseEnter}
+                  onMouseLeave={onMouseLeave}
+                   className="pointer">
+                  <p>Last 7 days<AiFillCaretDown/></p>
+                  </div>
+                  <div className="positiondrop1">
+                  {dropdown && <DropdownDays />}
+                  
 
+                  </div>
+                </div>
           </div>
         <div class="col-3 mr-5 bg-primary ml-3 text-white opacitytext">
           <p class="text-left mt-3 ml-1 opacitytexthead"> confirmed corona right now</p>
@@ -319,7 +348,9 @@ function Dankmemes() {
           <div class="m-1">
          
             <div className="Chart margins2 ">
-                <Bar 
+                <Bar  
+                  width={4}
+                  height={3}
                   data={chartData}
                   options={{
 
@@ -403,4 +434,4 @@ function Dankmemes() {
   );
 };
 
-export default Dankmemes;
+export default infosection;

@@ -16,7 +16,7 @@ function navbar() {
 
   const onMouseEnter = () => {
     if (window.innerWidth < 960) {
-      setDropdown(true);
+      setDropdown(false);
     } else {
       setDropdown(true);
     }
@@ -31,7 +31,7 @@ function navbar() {
   };
 
   return (
-    <div className="navbar">
+    <div  className="navbar">
       <div className="container-logo">
         <img className="Logo" src={Logo} alt="Logo-codemi" />
       </div>
@@ -43,12 +43,13 @@ function navbar() {
         <img className="User" src={User} alt="User-codemi" />
         <AboutLinkLogo>
           <AiOutlineDown  className='nav-item'
-            onMouseEnter={onMouseEnter}
-            onMouseLeave={onMouseLeave} className="iconpanah" size={16} />
-          {dropdown && <Dropdown />}
-        </AboutLinkLogo>
+            onClick={onMouseEnter}
+            onMouseLeave={onMouseLeave}
+            className="iconpanah" size={16} />
+          {dropdown && <Dropdown></Dropdown>}
+        </AboutLinkLogo >
       </div>
-    </div>
+    </div >
   );
 }
 

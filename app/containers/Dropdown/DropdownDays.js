@@ -6,7 +6,7 @@ import {BiLogOutCircle} from 'react-icons/bi';
 import {CgProfile} from 'react-icons/cg';
 import '../NavBar/NavBar'
 
-function Dropdown() {
+function DropdownDays() {
   
 
   const [click, setClick] = useState(false);
@@ -15,23 +15,23 @@ function Dropdown() {
 
   return (
     <>
-     <div className="drops opacitytext ">
+     <div className="drops2 opacitytext ">
       <div onClick={() => setClick(false)}  onClick={handleClick} class="row text-dark text-left mt-3 hoverdropdown  ">
         <div className="col">
-        <CgProfile className="mr-2 ml-2" size={21} /> My Profile
+            7 days
          <hr/>
         
         </div>
       </div>
       <div onClick={() => setClick(false)}  onClick={handleClick} class="row text-dark text-left mt-0 hoverdropdown">
         <div className="col-sm">
-        <FiSettings className="mr-2 ml-2" size={21} /> Setting
+            14 days
          <hr/>
         </div>
       </div>
       <div onClick={() => setClick(false)}  class="row text-dark left mt-0 hoverdropdown ">
         <div className="col-sm">
-        <BiLogOutCircle className="mr-2 ml-2" size={21} /> Logout
+            21 days
          <hr/>
         </div>
       </div>  
@@ -40,4 +40,4 @@ function Dropdown() {
   );
 }
 
-export default Dropdown;
+export default DropdownDays;

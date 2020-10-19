@@ -6,13 +6,54 @@ import {AiOutlineRight} from"react-icons/ai";
 import {AiFillCaretDown} from"react-icons/ai";
 import "./infosection2.css";
 
-function Dankmemes() {
+import DropdownDays from "../Dropdown/DropdownDays";
+
+function infosection2() {
   const [chartData, setChartData] = useState({});
   const [chartDataLine, setChartDataLine] = useState({});
   
   const [TotalConfirmed, setTotalConfirmed] = useState({});
   const [data, setData] = useState([]);
   const [datadaily, setData1] = useState([]);
+
+  
+  const [dropdown2, setDropdown2] = useState(false);
+
+  const onMouseEnter2 = () => {
+    if (window.innerWidth < 960) {
+      setDropdown2(false);
+    } else {
+      setDropdown2(true);
+    }
+  };
+
+  const onMouseLeave2 = () => {
+    if (window.innerWidth < 960) {
+      setDropdown2(false);
+    } else {
+      setDropdown2(false);
+    }
+  };
+
+
+  const [dropdown, setDropdown] = useState(false);
+
+  const onMouseEnter = () => {
+    if (window.innerWidth < 960) {
+      setDropdown(false);
+    } else {
+      setDropdown(true);
+    }
+  };
+
+  const onMouseLeave = () => {
+    if (window.innerWidth < 960) {
+      setDropdown(false);
+    } else {
+      setDropdown(false);
+    }
+  };
+
   
   var Total = 0;
   let Confirmed = [];
@@ -187,8 +228,16 @@ function Dankmemes() {
 
           <div className="row">
           <div class="col-sm text-left ml-4 mt-4 pointer">
-                    <p>Last 7 days <AiFillCaretDown/></p>
+              <div  onClick={onMouseEnter}
+                   onMouseLeave={onMouseLeave}
+                   className="pointer">
+                  <p>Last 7 days<AiFillCaretDown/></p>
+                  </div>
+                  <div className="positiondrop2">
+                  {dropdown && <DropdownDays />}
           </div>
+          </div>
+
         <div class="text-green col-sm text-right mt-4 mr-3 text-success pointer">
                  COURSE-REPORT <AiOutlineRight/>
         </div>
@@ -213,7 +262,14 @@ function Dankmemes() {
           {renderTable2()}  
           <div className="row marginbottoms ">
           <div class="col-sm text-left ml-4 mt-4 pointer">
-                    <p>Last 7 days <AiFillCaretDown/></p>
+              <div  onClick={onMouseEnter2}
+                   onMouseLeave={onMouseLeave2}
+                   className="pointer">
+                  <p>Last 7 days<AiFillCaretDown/></p>
+                  </div>
+                  <div className="positiondrop2">
+                  {dropdown2 && <DropdownDays />}
+          </div>
           </div>
         <div class="col-sm text-right mt-4 mr-3 text-success pointer">
                  COURSE-REPORT <AiOutlineRight/>
@@ -226,4 +282,4 @@ function Dankmemes() {
   );
 };
 
-export default Dankmemes;
+export default infosection2;

@@ -24,6 +24,7 @@ function Home() {
      <Infosection2/>
      <div className="row position2">
             <div class="col-sm text-left">
+            Daily Confirmed
             </div>
       </div>
      <Infosection3/>
