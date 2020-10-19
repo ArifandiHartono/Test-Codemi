@@ -12,18 +12,15 @@ import SideBar from '../SideBar/SideBar';
 import NavBar from '../NavBar/NavBar';
 import Home from '../Home/Home';
 
-
-
 export default function HomePage() {
   return (
     <div>
-        <NavBar/>
-        <SideBar/>
-        
-        <div>
-            <Home/>
-        </div>
+      <NavBar />
+      <SideBar />
+
+      <div>
+        <Home />
+      </div>
     </div>
- 
   );
 }

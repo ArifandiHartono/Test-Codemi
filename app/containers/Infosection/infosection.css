@@ -1,0 +1,109 @@
+.margins{
+    margin-top: -10px;
+
+}
+
+.margins2{
+    margin-top: 0px;
+    margin-left: -7%;
+}
+
+.opacitytexthead
+{
+    opacity: 100%;
+}
+
+.opacitytext{
+    opacity: 85%;
+}
+
+.hrwhite
+{
+    opacity: 30%;
+    margin-top: -15px;
+    width: 98%;
+    color: white;
+    border-color:white;
+}
+.canvas{
+
+    width:1000px !important;
+    height:600px !important;
+  
+  }
+
+.hrwhitebottom{
+    opacity: 30%;
+    margin-top: 35px;
+    color: white;
+    margin-left:-19px;
+    width: 314px;
+    border-color:white; 
+}
+
+.marginicon
+{
+    margin-left: 15px;
+    margin-right: -15px;
+}
+
+
+
+.hrwhite2
+{
+    opacity: 30%;
+    margin-top: -1px;
+    margin-bottom: -20px;
+   
+    width: 90%;
+    color: white;
+    border-color:white;
+}
+.MarginTop{
+    margin-top: 20%;
+}
+.onHover
+{
+    display: none   ;
+}
+
+
+
+
+.hover2:hover > .onHover{
+    display:block;
+    position: absolute; 
+    top: -16px; 
+    left: 2px;
+    width: 155px;
+    border: 1px solid green;
+    border-radius: 7px 7px 7px 7px;
+    height: 5px; 
+    background: green; 
+    margin-bottom: 50px;
+}
+
+.onHover1{
+    display: none;
+}
+
+.shadow{
+    border: 1px solid #E7DFDF;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.hover2:hover > .onHover1{
+    display:block;
+    position: absolute; 
+    top: -16px; 
+    left: 15px;
+    width: 200px;
+    border: 1px solid green;
+    border-radius: 7px 7px 7px 7px;
+    height: 5px; 
+    background: green; 
+    margin-bottom: 50px;
+}
+
+
+

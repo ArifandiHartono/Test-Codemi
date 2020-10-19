@@ -2,7 +2,7 @@ import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 
 export const AboutLinkLogo = styled(Link)`
-&:hover {
+  &:hover {
     color: Green;
     transition: 0.3s ease-out;
   }

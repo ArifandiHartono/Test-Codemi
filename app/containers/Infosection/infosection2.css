@@ -1,0 +1,56 @@
+.containersize{
+    width: 37.5%;
+    
+}
+
+.marginbottoms
+{
+    margin-bottom: -100px;
+}
+
+.widthsection3
+{
+    width: 76%;
+}
+
+.hrwhite4
+{
+    opacity: 30%;
+    margin-top: -1px;
+    margin-bottom: -20px;
+    width: 85%;
+    color: black;
+    border-color:black;
+}
+
+.margin7days
+{
+    margin-left: -83%;
+    margin-bottom: -200%;
+}
+
+
+.margin7days2
+{
+    margin-left: -76%;
+}
+
+.MarginTop2{
+    margin-top: 29PX;
+}
+
+.pointer{
+    cursor:pointer;
+}
+
+.hrwhite3
+{
+    opacity: 20%;
+    margin-top: -1px;
+    margin-bottom: -20px;
+    margin-left: 6%;
+
+    width: 90%;
+    color: black;
+    border-color:black;
+}
