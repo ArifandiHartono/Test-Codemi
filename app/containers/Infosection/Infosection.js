@@ -164,6 +164,118 @@ function infosection() {
             
           ]
         });
+
+        setChartDataLine3({
+          labels: Dates,
+          datasets: [
+            {
+              label: "level of thiccness",
+              data: TotalDeltaConfirmed,
+              fill: false,
+              backgroundColor: "rgba(0,0, 255, 1)",
+              lineTension: 0,  
+              borderWidth: 2,
+              borderColor: "rgba(0,0, 255, 1)",
+              
+              backgroundColor: "rgba(0,0, 255, 1)",
+              pointBackgroundColor: "rgba(0,0, 255, 1)",
+              pointBorderColor: "rgba(0,0, 255, 1)",
+              pointHoverBackgroundColor: "rgba(0,0, 255, 1)",
+              pointHoverBorderColor: "rgba(0,0, 255, 1)",
+            },
+            {
+              label: "level of thiccness",
+              data: Confirm,
+              fill: false,
+              lineTension: 0,  
+              backgroundColor: "rgba(0,0, 255, 1)",
+              borderWidth: 2,
+              borderColor: "rgba(0,0, 255, 1)",
+              borderDash: [5, 5],
+              backgroundColor: "rgba(0,0, 255, 1)",
+              pointBackgroundColor: "rgba(0,0, 255, 1)",
+              pointBorderColor: "rgba(0,0, 255, 1)",
+              pointHoverBackgroundColor: "rgba(0,0, 255, 1)",
+              pointHoverBorderColor: "rgba(0,0, 255, 1)",
+            }
+            
+          ]
+        });
+
+        setChartDataLine2({
+          labels: Dates,
+          datasets: [
+            {
+              label: "level of thiccness",
+              data: Death2,
+              fill: false,
+              backgroundColor: "rgba(0,0, 255, 1)",
+              lineTension: 0,  
+              borderWidth: 2,
+              borderColor: "rgba(0,0, 255, 1)",
+              
+              backgroundColor: "rgba(0,0, 255, 1)",
+              pointBackgroundColor: "rgba(0,0, 255, 1)",
+              pointBorderColor: "rgba(0,0, 255, 1)",
+              pointHoverBackgroundColor: "rgba(0,0, 255, 1)",
+              pointHoverBorderColor: "rgba(0,0, 255, 1)",
+            },
+            {
+              label: "level of thiccness",
+              data: Recovered,
+              fill: false,
+              lineTension: 0,  
+              backgroundColor: "rgba(0,0, 255, 1)",
+              borderWidth: 2,
+              borderColor: "rgba(0,0, 255, 1)",
+              borderDash: [5, 5],
+              backgroundColor: "rgba(0,0, 255, 1)",
+              pointBackgroundColor: "rgba(0,0, 255, 1)",
+              pointBorderColor: "rgba(0,0, 255, 1)",
+              pointHoverBackgroundColor: "rgba(0,0, 255, 1)",
+              pointHoverBorderColor: "rgba(0,0, 255, 1)",
+            }
+            
+          ]
+        });
+
+        setChartDataLine1({
+          labels: Dates,
+          datasets: [
+            {
+              label: "level of thiccness",
+              data: Recovered,
+              fill: false,
+              backgroundColor: "rgba(0,0, 255, 1)",
+              lineTension: 0,  
+              borderWidth: 2,
+              borderColor: "rgba(0,0, 255, 1)",
+              
+              backgroundColor: "rgba(0,0, 255, 1)",
+              pointBackgroundColor: "rgba(0,0, 255, 1)",
+              pointBorderColor: "rgba(0,0, 255, 1)",
+              pointHoverBackgroundColor: "rgba(0,0, 255, 1)",
+              pointHoverBorderColor: "rgba(0,0, 255, 1)",
+            },
+            {
+              label: "level of thiccness",
+              data: Confirm,
+              fill: false,
+              lineTension: 0,  
+              backgroundColor: "rgba(0,0, 255, 1)",
+              borderWidth: 2,
+              borderColor: "rgba(0,0, 255, 1)",
+              borderDash: [5, 5],
+              backgroundColor: "rgba(0,0, 255, 1)",
+              pointBackgroundColor: "rgba(0,0, 255, 1)",
+              pointBorderColor: "rgba(0,0, 255, 1)",
+              pointHoverBackgroundColor: "rgba(0,0, 255, 1)",
+              pointHoverBorderColor: "rgba(0,0, 255, 1)",
+            }
+            
+          ]
+        });
+
       })
       .catch(err => {
         console.log(err);
@@ -180,7 +292,43 @@ function infosection() {
     chartline();
   }, []);
 
+
   const [dropdown, setDropdown] = useState(false);
+  const [Line1, setLine1] = useState(true);
+  const [Line2, setLine2] = useState(false);
+  const [Line3, setLine3] = useState(false);
+  const [Line4, setLine4] = useState(false);
+  
+  const Lineone = () => {
+    setLine1(true);
+    setLine2(false);
+    setLine3(false);
+    setLine4(false);
+  }
+
+  
+  const Linetwo = () => {
+    setLine1(false);
+    setLine2(true);
+    setLine3(false);
+    setLine4(false);
+  }
+
+  
+  const Linethree = () => {
+    setLine1(false);
+    setLine2(false);
+    setLine3(true);
+    setLine4(false);
+  }
+
+  
+  const Linefour = () => {
+    setLine1(false);
+    setLine2(false);
+    setLine3(false);
+    setLine4(true);
+  }
 
   const onMouseEnter = () => {
     if (window.innerWidth < 960) {
@@ -243,25 +391,25 @@ function infosection() {
       <div class="row">
         <div class="col-6 ml-auto bg-white text-dark opacitytext shadow index">
           <div className="row">
-            <div class="col-sm hover2 pointer">
+            <div onClick={Lineone} class="col-sm hover2 pointer">
               <hr className="onHover"/>
               <p className="MarginTop boldhover">Confirmed</p>
                   <h1>{TotalDailys.Total}</h1>
               <p className="Hides">vs last 7 days</p>
             </div>
-            <div class="col-sm hover2 pointer">
+            <div onClick={Linetwo} class="col-sm hover2 pointer">
             <hr className="onHover"/>
             <p className="MarginTop boldhover">Recovered</p>
               <h1>{TotalRecov.Total}</h1>
               <p className="Hides">vs last 7 days</p>  
             </div>
-            <div class="col-sm hover2 pointer">
+            <div  onClick={Linethree}class="col-sm hover2 pointer">
               <hr className="onHover "/>
               <p className="MarginTop boldhover">Death</p>
               <h1>{TotalDeat.Total}</h1>
               <p className="Hides">vs last 7 days</p>
             </div>
-            <div class="col-sm hover2 pointer">
+            <div onClick={Linefour} class="col-sm hover2 pointer">
               <hr className="onHover "/>
               <p className="MarginTop boldhover">DeltaConfirmed</p>
               <h1>{TotalDelta.Total}</h1>
@@ -269,7 +417,126 @@ function infosection() {
             </div>
           </div>
           <div className="Chart">
-                <Line
+             {  Line1 && <Line
+                  width={10}
+                  height={7}
+                  data={chartDataLine2}
+                  options={{
+                    
+                    responsive: true,
+                   
+                    elements: {
+                      line: {
+                        tension: 0
+                      },
+                      point:{
+                          radius: 0
+                      }
+                  },
+                    legend: {
+                      display: false
+                  },
+                  tooltips: {
+                      callbacks: {
+                        label: function(tooltipItem) {
+                                return tooltipItem.yLabel;
+                        }
+                      }
+                  },
+                    responsive: true,
+                    title: { text: "THICCNESS SCALE", display: false },
+                    scales: {
+                      yAxes: [
+                        {
+                          display:true,
+                          position: 'right',
+                          ticks: {
+                            display:true,
+                            autoSkip: true,
+                            maxTicksLimit: 10,
+                            beginAtZero: true
+                          },
+                          gridLines: {
+                            display: true
+                          }
+                        }
+                      ],
+                      xAxes: [
+                        {
+                          display: true,
+                          categoryPercentage: 1.0,
+                          barPercentage: 0.95,
+                          gridLines: {
+                            display: false
+                          }
+                        }
+                      ]
+                    }
+                  }}
+                />
+                }
+
+            {  Line2 && <Line
+                  width={10}
+                  height={7}
+                  data={chartDataLine1}
+                  options={{
+                    
+                    responsive: true,
+                   
+                    elements: {
+                      line: {
+                        tension: 0
+                      },
+                      point:{
+                          radius: 0
+                      }
+                  },
+                    legend: {
+                      display: false
+                  },
+                  tooltips: {
+                      callbacks: {
+                        label: function(tooltipItem) {
+                                return tooltipItem.yLabel;
+                        }
+                      }
+                  },
+                    responsive: true,
+                    title: { text: "THICCNESS SCALE", display: false },
+                    scales: {
+                      yAxes: [
+                        {
+                          display:true,
+                          position: 'right',
+                          ticks: {
+                            display:true,
+                            autoSkip: true,
+                            maxTicksLimit: 10,
+                            beginAtZero: true
+                          },
+                          gridLines: {
+                            display: true
+                          }
+                        }
+                      ],
+                      xAxes: [
+                        {
+                          display: true,
+                          categoryPercentage: 1.0,
+                          barPercentage: 0.95,
+                          gridLines: {
+                            display: false
+                          }
+                        }
+                      ]
+                    }
+                  }}
+                />
+                }
+
+
+          {  Line3 && <Line
                   width={10}
                   height={7}
                   data={chartDataLine}
@@ -326,6 +593,67 @@ function infosection() {
                     }
                   }}
                 />
+                }
+
+
+          {  Line4 && <Line
+                  width={10}
+                  height={7}
+                  data={chartDataLine3}
+                  options={{
+                    
+                    responsive: true,
+                   
+                    elements: {
+                      line: {
+                        tension: 0
+                      },
+                      point:{
+                          radius: 0
+                      }
+                  },
+                    legend: {
+                      display: false
+                  },
+                  tooltips: {
+                      callbacks: {
+                        label: function(tooltipItem) {
+                                return tooltipItem.yLabel;
+                        }
+                      }
+                  },
+                    responsive: true,
+                    title: { text: "THICCNESS SCALE", display: false },
+                    scales: {
+                      yAxes: [
+                        {
+                          display:true,
+                          position: 'right',
+                          ticks: {
+                            display:true,
+                            autoSkip: true,
+                            maxTicksLimit: 10,
+                            beginAtZero: true
+                          },
+                          gridLines: {
+                            display: true
+                          }
+                        }
+                      ],
+                      xAxes: [
+                        {
+                          display: true,
+                          categoryPercentage: 1.0,
+                          barPercentage: 0.95,
+                          gridLines: {
+                            display: false
+                          }
+                        }
+                      ]
+                    }
+                  }}
+                />
+                }
                 
                   <hr className="hrbottom"/>
                   <div  onClick={onMouseEnter}
@@ -335,7 +663,7 @@ function infosection() {
                   </div>
                   <div className="positiondrop1">
                   {dropdown && <DropdownDays />}
-                  
+                
 
                   </div>
                 </div>
@@ -426,10 +754,11 @@ function infosection() {
             <div class="col-sm text-right hover pointer">
             REAL-TIMEREPORT <AiOutlineRight className="marginicon"/>
             </div>
-                
+           
           </div>            
        </div>
-    </div>
+      </div>
+
     </div>
   );
 };
